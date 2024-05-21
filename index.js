@@ -63,7 +63,9 @@ app.listen(PORT,() => {
     console.log("The server is running at port:",PORT)
 })
 app.get("/status", (req, res) => {
-    
-    res.send("Server is running");
+    const status= {
+        "Status":"\"Server is running"
+    };
+    res.send(status);
 
 });
