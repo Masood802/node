@@ -9,6 +9,11 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT,() => {
     console.log("The server is running at port:",PORT)
 })
+app.get("/", (req, res) => {
+    
+    res.send("Server is working fine");
+
+});
 app.get("/puppeteer",  (req, res)=> {
     scraper(res);
 })

@@ -26,6 +26,7 @@ const extractItems = async (page) => {
 const sleep = ms => new Promise(res => setTimeout(res, ms));
 const scraper = async (res) => {
   const browser = await puppeteer.launch({ headless: false });
+    try {
         const [page] = await browser.pages();
 
         await page.goto('https://www.google.com/maps/search/restaurants/@31.506432,74.3243776,10z', {
@@ -36,7 +37,11 @@ const scraper = async (res) => {
       data = await extractItems(page);
         data = JSON.stringify(data)
         res.send(data);
-      await browser.close();
-  
+
+    } catch (err) {
+        console.log("something went wrong")
+    } finally {
+        await browser.close();
+    }     
 }
 module.exports = { scraper };
