@@ -5,7 +5,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 // let data = null;
-// const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8080;
 // const puppeteer = require('puppeteer');
 // const extractItems = async (page) => {
 //     let maps_data = await page.evaluate(() => {
