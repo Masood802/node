@@ -25,8 +25,15 @@ const extractItems = async (page) => {
 }
 const sleep = ms => new Promise(res => setTimeout(res, ms));
 const scraper = async (res) => {
+    // try {
+        
+    // } catch (e) {
+    //     console.log(e)
+    // } finally {
+        
+    // }
     const browser = await puppeteer.launch({
-        headless: false,
+        headless: true,
     })
         const [page] = await browser.pages();
 
