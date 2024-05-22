@@ -1,4 +1,4 @@
-const {scraper}=require('../scraper')
+const {scraper}=require('./scraper')
 const express = require('express');
 const cors = require('cors');
 const app = express();
